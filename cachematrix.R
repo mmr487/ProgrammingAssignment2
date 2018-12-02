@@ -10,7 +10,10 @@
  ## get the value of the matrix, set the value of the inverse matrix, and
  ## get the value of the inverse matrix. 
 
-makeCacheMatrix <- function(cached_matrix = matrix()) {
+makeCacheMatrix <- function(passed_matrix = matrix()) {
+    #passed_matrix is reassigned to cached_matrix so that cached_matrix cannot be
+    #overwritten outside of the function environment. 
+    cached_matrix <- passed_matrix
     cached_inv <- NULL
     set_matrix <- function(new_matrix){
         cached_matrix <<- new_matrix
